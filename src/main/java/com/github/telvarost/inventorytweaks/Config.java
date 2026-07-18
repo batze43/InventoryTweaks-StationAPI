@@ -17,8 +17,26 @@ public class Config {
 
         @ConfigCategory(name = "MouseTweaks Config")
         public MouseTweaksConfig MOUSE_TWEAKS_CONFIG = new MouseTweaksConfig();
+
+        @ConfigCategory(name = "ChestAutofill Config")
+        public ChestAutofillConfig CHEST_AUTOFILL_CONFIG = new ChestAutofillConfig();
     }
 
+    public static class ChestAutofillConfig {
+
+        @ConfigEntry(
+                name = "Enable Autofill into chest [A + Left click]",
+                description = "Move all items present in chest into chest"
+        )
+        public Boolean EnableAutofillWhenClickingEmpty = true;
+
+        @ConfigEntry(
+                name = "Enable Autofill one item [A + Left click] on an item",
+                description = "Move one item type out of/into chest"
+        )
+        public Boolean EnableAutofillWhenClickingItem = true;
+
+    }
     public static class CraftingResultConfig {
 
         @ConfigEntry(
@@ -159,4 +177,5 @@ public class Config {
 //        @Comment("true = inventories, false = cursor/slot")
 //        public static Boolean shiftScrollWheelBehavior = true;
     }
+
 }
