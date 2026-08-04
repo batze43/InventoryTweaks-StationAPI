@@ -25,7 +25,7 @@ public class Config {
     public static class ChestAutofillConfig {
 
         @ConfigEntry(
-                name = "Enable Autofill into chest [A + Left click]",
+                name = "Enable Autofill into chest[A + Left click]",
                 description = "Move all items present in chest into chest"
         )
         public Boolean EnableAutofillWhenClickingEmpty = true;

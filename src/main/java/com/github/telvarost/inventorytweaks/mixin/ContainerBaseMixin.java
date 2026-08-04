@@ -9,6 +9,7 @@ import net.minecraft.block.entity.FurnaceBlockEntity;
 import net.minecraft.client.gui.screen.ingame.DoubleChestScreen;
 import net.minecraft.client.gui.screen.ingame.FurnaceScreen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
+import net.minecraft.client.option.GameOptions;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.recipe.SmeltingRecipeManager;
 import net.minecraft.screen.ScreenHandler;
@@ -118,7 +119,7 @@ public abstract class ContainerBaseMixin extends Screen {
         Slot clickedSlot = this.getSlotAt(mouseX, mouseY);
         /** - Handle ChestAutofill */
         if (minecraft.currentScreen instanceof DoubleChestScreen) {
-            if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
+            if (Keyboard.isKeyDown( minecraft.options.leftKey.code)) {
                 if (clickedSlot != null) {
                     if (clickedSlot.hasStack()) {
                         if (Config.INVENTORY_TWEAKS_CONFIG.CHEST_AUTOFILL_CONFIG.EnableAutofillWhenClickingItem) {
